@@ -1,0 +1,208 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Main App Styles */
+.App {
+  text-align: center;
+}
+
+/* Fixed top navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c86e0;
+  color: white;
+  padding: 1rem 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  height: 2cm;
+}
+
+.navbar-title {
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #cde8ff, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.5px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  animation: glow 3s infinite alternate;
+  margin-left: 10px;
+}
+
+/* Optional glowing effect */
+@keyframes glow {
+  0% {
+    text-shadow: 2px 2px 8px rgba(0, 191, 255, 0.4);
+  }
+  100% {
+    text-shadow: 2px 2px 16px rgba(186, 228, 238, 0.9);
+  }
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 3rem;
+  font-size: 20px;
+  transition: 0.3s;
+  text-shadow: 5px 5px 5px gray;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+  color: aqua;
+}
+
+/* Logout Button Styling */
+.logout-button {
+  color: white;
+  background: transparent;
+ text-decoration: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 3rem; /* Align the logout button like other navbar items */
+   text-shadow: 5px 5px 5px gray; 
+  transition: 0.3s;
+  outline: none;
+}
+
+/*.logout-button:hover {
+  text-decoration: underline;
+  font-weight: bold;
+  color: aqua;}*/
+  /* Removing any unwanted background color effect */
+
+
+/* Page Content */
+.page-content {
+  background-image: url('./assets/leaf.png'), url('./assets/leaf.png');
+  background-position: 15cm center, calc(100% - 15cm) center; /* Position the leaves closer */
+  background-repeat: no-repeat, no-repeat;
+  background-size: 60px 60px, 60px 60px; /* Reduce the size of the leaves */
+  text-align: center;
+  padding: 5px 20px;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.page-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.page-content p {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+/* Navbar Header */
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 100px; /* Adjust the size of the logo */
+  height: auto;
+  margin-right: 0px; /* Space between logo and title */
+}
+
+.navbar-title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #2c86e0;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Home Page Background */
+.home-background {
+  position: relative;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* Remove default background if any */
+}
+
+/* Home Page Content */
+.home-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px 60px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.home-content h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.home-content p {
+  font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    height: auto;
+  }
+
+  .navbar-logo {
+    width: 80px; /* Adjust logo size for mobile */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+    font-size: 18px;
+  }
+
+  .home-content {
+    padding: 30px;
+    font-size: 1.2rem;
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

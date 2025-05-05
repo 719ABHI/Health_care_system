@@ -1,0 +1,80 @@
+/* AccountSection.css */
+.account-section {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .account-form,
+  .account-info {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    height: 80px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .save-btn {
+    background-color: #28a745;
+  }
+  
+  .save-btn:hover {
+    background-color: #218838;
+  }
+  
+  .logout-btn {
+    background-color: #dc3545;
+    margin-top: 20px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .edit-btn {
+    background-color: #ffc107;
+  }
+  
+  .edit-btn:hover {
+    background-color: #e0a800;
+  }
+  

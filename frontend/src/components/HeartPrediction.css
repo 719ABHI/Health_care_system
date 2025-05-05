@@ -1,0 +1,86 @@
+html {
+  scroll-padding-top: 6rem;
+}
+
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  color: #333;
+  animation: backgroundSlideshow 8s infinite;
+}
+
+/* Container styling */
+.heart-container {
+  max-width: 700px;
+  margin: 140rem auto 2rem auto; /* Adjusted from 100rem to 10rem */
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading */
+.heart-container h2 {
+  margin-bottom: 1.5rem;
+  color: #1976d2;
+  text-align: center;
+}
+
+/* Labels */
+.heart-container label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Inputs & selects */
+.heart-container input,
+.heart-container select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Button styles */
+.heart-container button {
+  margin-top: 1.5rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  width: 100%;
+}
+
+.heart-container button:hover {
+  background-color: #0d47a1;
+}
+
+/* Background slideshow animation */
+@keyframes backgroundSlideshow {
+  0% {
+    background-image: url('C:\Users\abhis\Downloads\Mior_project\frontend\src\assets\brain.png');
+  }
+  50% {
+    background-image: url('C:\Users\abhis\Downloads\Mior_project\frontend\src\assets\heart.png');
+  }
+  100% {
+    background-image: url('C:\Users\abhis\Downloads\Mior_project\frontend\src\assets\brain.png');
+  }
+}
