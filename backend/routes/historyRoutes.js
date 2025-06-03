@@ -1,43 +1,56 @@
 
-// routes/historyRoutes.js
 const express = require('express');
 const router = express.Router();
 const HistoryOfUser = require('../models/HistoryOfUser');
 
-// Route to save user prediction history
+// POST /api/history → Save prediction history (no duplicate check, allows multiple entries per email)
 router.post('/', async (req, res) => {
-  const { predictionType, dateTime, result, riskPercentage, features } = req.body;
+  const { email, predictionType, dateTime, result, riskPercentage, features } = req.body;
+
+  // Validate required fields
+  if (!email || !predictionType || !dateTime || !result || riskPercentage === undefined) {
+    return res.status(400).json({ error: 'Missing required fields: email, predictionType, dateTime, result, riskPercentage' });
+  }
 
   try {
-    // Create a new history record
     const newHistory = new HistoryOfUser({
+      email,
       predictionType,
       dateTime,
       result,
       riskPercentage,
-      features,
+      features: features || {}, // Ensure it's at least an empty object
     });
 
-    // Save the history record to the database
     await newHistory.save();
-    res.status(201).json({ message: 'Prediction history saved successfully' });
+    res.status(201).json({ message: '✅ Prediction history saved successfully' });
   } catch (error) {
-    console.error('Error saving prediction history:', error);
-    res.status(500).json({ error: 'Error saving prediction history' });
+    console.error('❌ Error saving prediction history:', error);
+    res.status(500).json({ error: 'Error saving prediction history', details: error.message });
   }
 });
 
-// Route to get all history (for future expansion, if needed)
+// GET /api/history?email=someone@example.com → Fetch history by email (or all if no email)
 router.get('/', async (req, res) => {
+  const email = req.query.email;
+  console.log('📥 Received email query:', email);
+
   try {
-    const histories = await HistoryOfUser.find();
+    let histories;
+    if (email) {
+      histories = await HistoryOfUser.find({ email }).lean();
+      if (histories.length === 0) {
+        return res.status(404).json({ message: `No history found for email: ${email}` });
+      }
+    } else {
+      histories = await HistoryOfUser.find().lean();
+    }
+
     res.status(200).json(histories);
   } catch (error) {
-    console.error('Error fetching prediction history:', error);
-    res.status(500).json({ error: 'Error fetching prediction history' });
+    console.error('❌ Error fetching prediction history:', error);
+    res.status(500).json({ error: 'Error fetching prediction history', details: error.message });
   }
 });
 
 module.exports = router;
-
-

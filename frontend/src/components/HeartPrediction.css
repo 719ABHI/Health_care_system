@@ -1,8 +1,8 @@
-html {
+
+ html {
   scroll-padding-top: 6rem;
 }
 
-/* Global styles */
 body {
   margin: 0;
   padding: 0;
@@ -13,66 +13,140 @@ body {
   background-position: center;
   min-height: 100vh;
   color: #333;
-  animation: backgroundSlideshow 8s infinite;
+  animation: backgroundSlideshow 12s infinite ease-in-out;
+  transition: background-image 1s ease-in-out;
 }
 
-/* Container styling */
 .heart-container {
   max-width: 700px;
-  margin: 140rem auto 2rem auto; /* Adjusted from 100rem to 10rem */
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin: 150rem auto 2rem auto;
+  padding: 2.5rem;
+  background: #ffffffcc;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
-/* Heading */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .heart-container h2 {
   margin-bottom: 1.5rem;
-  color: #1976d2;
+  color: #023e8a;
+  font-size: 28px;
+  font-weight: 600;
   text-align: center;
 }
 
-/* Labels */
 .heart-container label {
   display: block;
   margin-top: 1rem;
   font-weight: 500;
+  color: #1d3557;
 }
 
-/* Inputs & selects */
 .heart-container input,
 .heart-container select {
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.75rem;
   margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Button styles */
-.heart-container button {
-  margin-top: 1.5rem;
-  background-color: #1976d2;
+.heart-container input:focus,
+.heart-container select:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+  outline: none;
+}
+
+/* Button Styles */
+.btn,
+.info-button {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #00b4d8, #0077b6);
   color: white;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 1.9rem;
   font-size: 16px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.2s ease, background 0.4s ease;
   display: block;
+}
+
+.btn {
   width: 100%;
 }
 
-.heart-container button:hover {
-  background-color: #0d47a1;
+.btn:hover {
+  background: linear-gradient(to right, #0077b6, #023e8a);
+  transform: scale(1.02);
 }
 
-/* Background slideshow animation */
+.info-button {
+  width: auto;
+  height: auto;
+  padding: 0.4rem 0.7rem;
+  margin-left: 10px;
+  font-size: 14px;
+  background-color: #48cae4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-button:hover {
+  background-color: #0077b6;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  white-space: nowrap;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.input-with-info:hover .tooltip {
+  opacity: 1;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.input-with-info {
+  display: flex;
+  align-items: center;
+}
+
+/* Background Slideshow */
 @keyframes backgroundSlideshow {
   0% {
     background-image: url('C:\Users\abhis\Downloads\Mior_project\frontend\src\assets\brain.png');

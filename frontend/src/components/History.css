@@ -1,147 +1,202 @@
-/* .history-container {
-    padding: 20px;
-  }
-  
+
+ /* Container Styling */
+.history-container {
+  padding: 30px;
+  background-color: #fefbe9;
+  margin-top: 450px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Section Headers */
+.history-container h2,
+.graph-container h3 {
+  text-shadow: 1px 1px 2px #bbb;
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Table Styling */
+.history-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 20px;
+}
+
+.history-table th,
+.history-table td {
+  padding: 12px 15px;
+  background: #ffffff;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.history-table th {
+  background-color: #e3f2fd;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Hover effect */
+.history-table tr:hover td {
+  background-color: #f1faff;
+}
+
+/* Bold first column */
+.history-table td:nth-child(1) {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Category Colors */
+.history-table td.Heart\\ Disease {
+  color: #e53935;
+}
+
+.history-table td.Brain\\ Stroke {
+  color: #1e88e5;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
   .history-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .history-table th, .history-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  .history-table th {
-    background-color: #f4f4f4;
-  }
-  
-  .graph-container {
-    margin-top: 30px;
-  }
-  
-  details {
-    margin-top: 10px;
-  }
-   */
-
-   .history-container {
-    padding: 20px;
-    background-color: #f9f8e5;
-    margin-top: 100px;
+    font-size: 0.9em;
   }
 
-  .history-container h2{
-    text-shadow: 2px 2px 2px grey;
-  }
-
-  .graph-container h3{
-    text-shadow: 2px 2px 2px grey;
-  }
-  
-  .history-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
   .history-table th,
   .history-table td {
     padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
   }
-  
-  .history-table th {
-    background-color: #f4f4f4;
-  }
-  
-  .graph-container {
-    margin-top: 30px;
-  }
-  
-  details {
-    margin-top: 10px;
-  }
-  
-  .history-table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .history-table td:nth-child(1) {
-    font-weight: bold;
-  }
-  
-  /* Styles for different prediction types */
-  .history-table td.Heart\\ Disease {
-    color: #ff6384;
-  }
-  
-  .history-table td.Brain\\ Stroke {
-    color: #36a2eb;
-  }
-  
-  /* Responsive Design */
-  @media screen and (max-width: 600px) {
-    .history-table {
-      font-size: 0.9em;
-    }
-  
-    .history-table th, .history-table td {
-      padding: 8px;
-    }
-  }
-  
-  .graph-container h3 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .delete-btn {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
 }
 
-.delete-btn:hover {
-  background-color: darkred;
-}
-
+/* Buttons */
 .button-group {
   margin-bottom: 20px;
 }
 
 .clear-history-btn,
-.download-report-btn {
-  padding: 8px 16px;
+.download-report-btn,
+.delete-btn {
+  padding: 10px 16px;
   margin-right: 10px;
-  background-color: #4caf50;
+  background-color: #1976d2;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
 }
 
 .clear-history-btn:hover,
 .download-report-btn:hover {
-  background-color: #45a049;
+  background-color: #1565c0;
 }
 
 .delete-btn {
-  padding: 5px 10px;
   background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 .delete-btn:hover {
-  background-color: #d32f2f;
+  background-color: #c62828;
 }
+
+/* Layout */
+.content-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.table-section {
+  flex: 1 1 500px;
+  overflow-x: auto;
+}
+
+.graphs-section {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Graph Card Style */
+.graph-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+details {
+  margin-top: 10px;
+}
+
+.input-form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.input-form-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+.input-group input,
+.input-group select {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  background-color: #1976d2;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #125ca1;
+}
+
+
+
+

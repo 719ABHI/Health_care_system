@@ -5,3 +5,8 @@ flask_cors
 pandas
 joblib
 tensorflow
+
+
+streamlit
+google-generativeai
+python-dotenv
