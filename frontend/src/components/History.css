@@ -1,74 +1,103 @@
-
- /* Container Styling */
-.history-container {
-  padding: 30px;
-  background-color: #fefbe9;
-  margin-top: 450px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* Section Headers */
-.history-container h2,
-.graph-container h3 {
-  text-shadow: 1px 1px 2px #bbb;
-  font-size: 1.8em;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-/* Table Styling */
-.history-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-  margin-top: 20px;
-}
-
-.history-table th,
-.history-table td {
-  padding: 12px 15px;
-  background: #ffffff;
-  text-align: left;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.history-table th {
-  background-color: #e3f2fd;
-  color: #333;
-  font-weight: 600;
-}
-
-/* Hover effect */
-.history-table tr:hover td {
-  background-color: #f1faff;
-}
-
-/* Bold first column */
-.history-table td:nth-child(1) {
-  font-weight: bold;
-  color: #333;
-}
-
-/* Category Colors */
-.history-table td.Heart\\ Disease {
-  color: #e53935;
-}
-
-.history-table td.Brain\\ Stroke {
-  color: #1e88e5;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 600px) {
+/* .history-container {
+    padding: 20px;
+  }
+  
   .history-table {
-    font-size: 0.9em;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .history-table th, .history-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .history-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .graph-container {
+    margin-top: 30px;
+  }
+  
+  details {
+    margin-top: 10px;
+  }
+   */
+
+   .history-container {
+    padding: 20px;
+    background-color: #f9f8e5;
+    margin-top: 100px;
   }
 
+  .history-container h2{
+    text-shadow: 2px 2px 2px grey;
+  }
+
+  .graph-container h3{
+    text-shadow: 2px 2px 2px grey;
+  }
+  
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
   .history-table th,
   .history-table td {
     padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .history-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .graph-container {
+    margin-top: 30px;
+  }
+  
+  details {
+    margin-top: 10px;
+  }
+  
+  .history-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .history-table td:nth-child(1) {
+    font-weight: bold;
+  }
+  
+  /* Styles for different prediction types */
+  .history-table td.Heart\\ Disease {
+    color: #ff6384;
+  }
+  
+  .history-table td.Brain\\ Stroke {
+    color: #36a2eb;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 600px) {
+    .history-table {
+      font-size: 0.9em;
+    }
+  
+    .history-table th, .history-table td {
+      padding: 8px;
+    }
+  }
+  
+  .graph-container h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
   }
 }
 
